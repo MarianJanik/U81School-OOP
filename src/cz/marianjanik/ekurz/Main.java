@@ -14,7 +14,7 @@ public class Main {
 	    Teacher teacher2 = new Teacher("Jan","Novák");
 	    Teacher teacher3 = new Teacher("Jaroslav","Bush");
 
-	    Student student1 =new Student("Petr", "Svoboda", LocalDate.parse("2011-03-06"),001);
+	    Student student1 =new Student("Petr", "Svoboda", LocalDate.parse("2011-03-06"),1);
         Student student2 =new Student("Milan", "Říha", LocalDate.parse("2010-03-16"),123);
 	    Student student3 =new Student("Jindřich", "Nový", LocalDate.parse("2012-03-30"),345);
 	    Student student4 =new Student("Miroslav", "Wolf", LocalDate.parse("2000-04-06"),4);
@@ -32,6 +32,8 @@ public class Main {
         System.out.println("---------- " + student4.getFullName());
 
         //endregion 1.fáze
+
+
         //-------------------------------------------------------------
         //region 2.fáze
         SchoolClass schoolClass1 = new SchoolClass("4.C",4, teacher2);
@@ -42,7 +44,7 @@ public class Main {
         schoolClass2.setStudent(student4);
         schoolClass2.setStudent(student5);
 
-
+        // xxxxxxxxxxxx
 
 
 
