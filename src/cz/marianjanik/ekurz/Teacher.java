@@ -9,6 +9,8 @@ public class Teacher {
         this.surname = surname;
     }
 
+    // region getters and setters
+
     public String getName() {
         return name;
     }
@@ -25,6 +27,12 @@ public class Teacher {
         this.surname = surname;
     }
 
+    // endregion
+
+    /**
+     * The method lists all information for printing.
+     * @return text for printing.
+     */
     public String getFullName(){
         return this.name + " " + this.surname;
     }

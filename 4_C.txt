@@ -1,0 +1,16 @@
+Třída: 4.C - třídní učitel: Jan NOVÁK
+
+_________________________  žáci mladší 12 let:
+
+1. Jindřich NOVÝ, 30.3.12  (věk 9 let) --- ID 345
+2. Petr SVOBODA, 6.3.11  (věk 10 let) --- ID 001
+3. Milan ŘÍHA, 16.3.10  (věk 11 let) --- ID 123
+
+_________________________  žáci 12 letí a starší:
+
+1. Zlatá BING, 6.4.08  (věk 13 let) --- ID 005
+2. Nela NOVÁ, 6.4.08  (věk 13 let) --- ID 005
+3. Petr PARET, 6.4.09  (věk 12 let) --- ID 004
+4. Klára SVOBODOVÁ, 6.4.09  (věk 12 let) --- ID 005
+-------------------------------------------------------
+4.C - celkový počet žáků: 9

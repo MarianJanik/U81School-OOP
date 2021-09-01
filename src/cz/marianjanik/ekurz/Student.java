@@ -3,7 +3,7 @@ package cz.marianjanik.ekurz;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Student extends Teacher{
+public class Student extends Teacher implements Comparable<Student>{
 //    private String nameStudent;
 //    private String surnameStudent;
     private LocalDate birthdate;
@@ -18,6 +18,8 @@ public class Student extends Teacher{
         this.birthdate = birthdate;
         this.studentNumber = studentNumber;
     }
+
+    // region getters and setters
 
     public LocalDate getBirthdate() {
         return birthdate;
@@ -35,7 +37,22 @@ public class Student extends Teacher{
         this.studentNumber = studentNumber;
     }
 
+    // endregion
+
+    /**
+     * The method lists all information for printing.
+     * @return text for printing.
+     */
     public String getAllStudentInfo(){
         return getStudentNumber() + " - " + getFullName() + " " + formatter.format(this.birthdate); //TODO lepší je get nebo this?
     }
+
+    /**
+     * The method for sorting (Collections.sort).
+     */
+    @Override
+    public int compareTo(Student second){
+        return this.getSurname().compareTo(second.getSurname());
+    }
+
 }
