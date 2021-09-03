@@ -34,7 +34,7 @@ public class Teacher {
      * @return text for printing.
      */
     public String getFullName(){
-        return this.name + " " + this.surname;
+        return getName() + " " + getSurname();
     }
 
 }

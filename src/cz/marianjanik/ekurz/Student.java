@@ -4,16 +4,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Student extends Teacher implements Comparable<Student>{
-//    private String nameStudent;
-//    private String surnameStudent;
     private LocalDate birthdate;
     private int studentNumber;
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yy");
 
     public Student(String nameStudent, String surnameStudent, LocalDate birthdate, int studentNumber) {
-//        this.nameStudent = nameStudent;
-//        this.surnameStudent = surnameStudent;
         super(nameStudent,surnameStudent);
         this.birthdate = birthdate;
         this.studentNumber = studentNumber;
@@ -44,7 +40,7 @@ public class Student extends Teacher implements Comparable<Student>{
      * @return text for printing.
      */
     public String getAllStudentInfo(){
-        return getStudentNumber() + " - " + getFullName() + " " + formatter.format(this.birthdate); //TODO lepší je get nebo this?
+        return getStudentNumber() + " - " + getFullName() + " " + formatter.format(getBirthdate());
     }
 
     /**

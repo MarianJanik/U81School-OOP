@@ -19,7 +19,7 @@ public class Main {
 	    Teacher teacher3 = new Teacher("Jaroslav","Bush");
 
 	    Student student1 =new Student("Petr", "Svoboda", LocalDate.parse("2011-03-06"),1);
-        Student student2 =new Student("Milan", "Říha", LocalDate.parse("2010-03-16"),123);
+        Student student2 =new Student("Milan", "Resl", LocalDate.parse("2010-03-16"),123);
 	    Student student3 =new Student("Jindřich", "Nový", LocalDate.parse("2012-03-30"),345);
 	    Student student4 =new Student("Miroslav", "Wolf", LocalDate.parse("2009-04-06"),4);
 	    Student student5 =new Student("Zlatá", "Bing", LocalDate.parse("2008-04-06"),5);
