@@ -8,7 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        final String FILENAME1 = "4_C.txt";
+        final String FILENAME1 = "4C1.txt";
+        final String FILENAME2 = "4C2.txt";
+        final String FILENAME3 = "4C3.txt";
 
         //region 1. fáze - konstruktory a OOP
 
@@ -48,22 +50,35 @@ public class Main {
         schoolClass1.setStudent(student6);
         schoolClass1.setStudent(student7);
 
-        System.out.println("\n\n------------------------------------------ výpis ad 1.\n");
-        WriteTo writer = new WriteTo();
-        writer.writeToConsole1(schoolClass1);
+        System.out.println("\n\n------------------------------------------ výpis ad 1. (a zápis do souboru " + FILENAME1 + "),\n");
+        WriteTo1 writer1 = new WriteTo1();
+        writer1.writeToConsole(schoolClass1);
+        try {
+            writer1.writeToFile(FILENAME1,schoolClass1);
+        } catch (FileNotFoundException e) {
+            System.err.println("Soubor nebylo možné uložit.");
+        }
 
-        System.out.println("\n\n------------------------------------------ výpis ad 2.\n");
-        writer.writeToConsole2(schoolClass1);
+        System.out.println("\n\n------------------------------------------ výpis ad 2. (a zápis do souboru " + FILENAME2 + "),\n");
+        WriteTo2 writer2 = new WriteTo2();
+        writer2.writeToConsole(schoolClass1);
+        try {
+            writer2.writeToFile(FILENAME2,schoolClass1);
+        } catch (FileNotFoundException e) {
+            System.err.println("Soubor nebylo možné uložit.");
+        }
+
 
         System.out.println("\n\n------------------------------------------ výpis ad 3. - určený vzor na zápis: \n");
-        System.out.println(writer.getWriteToFile(schoolClass1));
+        WriteTo3 writer3 = new WriteTo3();
+        writer3.writeToConsole(schoolClass1);
 
-        System.out.println("\n\n------------------------------------------ ad 3. - řazení - úprava - @Overide compareTo - toto se ukládá do " + FILENAME1 + "\n");
+        System.out.println("\n\n------------------------------------------ ad 3. - řazení - úprava - @Overide compareTo - zápis do " + FILENAME3 + ".\n");
         Collections.sort(schoolClass1.studentList);
-        System.out.println(writer.getWriteToFile(schoolClass1));
+        writer3.writeToConsole(schoolClass1);
 
         try {
-            writer.writeToFile(FILENAME1,schoolClass1);
+            writer3.writeToFile(FILENAME3,schoolClass1);
         } catch (FileNotFoundException e) {
             System.err.println("Soubor nebylo možné uložit.");
         }

@@ -9,54 +9,23 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 
-public class WriteTo implements ReadWrite{
+public class WriteTo3 implements ReadWrite{
 
     DecimalFormat myFormat = new DecimalFormat("000");
 
     @Override
-    public void writeToConsole1(SchoolClass schoolClass) {
-        System.out.println(getStringConsole1(schoolClass));
-    }
-
-    @Override
-    public void writeToConsole2(SchoolClass schoolClass) {
-        System.out.println(getStringConsole2(schoolClass));
+    public void writeToConsole(SchoolClass schoolClass) {
+        System.out.println(getInfoForWrite(schoolClass));
     }
 
     @Override
     public void writeToFile(String fileName,SchoolClass schoolClass) throws FileNotFoundException {
         try (PrintWriter writer = new PrintWriter(new FileOutputStream(fileName))){
-            writer.print(getWriteToFile(schoolClass));
+            writer.print(getInfoForWrite(schoolClass));
         }
     }
 
-
-
-    private String getStringConsole1(SchoolClass schoolClass){
-        StringBuilder builder = new StringBuilder();
-        builder.append("##################################\nTřída: " + schoolClass.getName()
-                + " (ročník: " + schoolClass.getGrade() + ")\nTřídní učitel: " + schoolClass.getTeacher().getSurname()
-                + ", " + schoolClass.getTeacher().getName() + "\nPočet studentů: " + schoolClass.size()
-                + "\n\n##################################\n");
-        int counter = 1;
-        for (Student student:schoolClass.studentList) {
-            builder.append("# " + counter + " # ID" + myFormat.format(student.getStudentNumber()) + " - " + student.getFullName()
-                    + " (" + student.getBirthdate().getYear() + ")\n");
-            counter++;
-        }
-        return builder.toString();
-    }
-
-    private String getStringConsole2(SchoolClass schoolClass){
-        StringBuilder builder = new StringBuilder();
-        builder.append(schoolClass.getName() + ", " + schoolClass.getTeacher().getFullName() + "\n");
-        for (Student student:schoolClass.studentList) {
-            builder.append("ID" + myFormat.format(student.getStudentNumber()) + ", " + student.getFullName() + "\n");
-        }
-        return builder.toString();
-    }
-
-    String getWriteToFile(SchoolClass schoolClass){
+    String getInfoForWrite(SchoolClass schoolClass){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yy");
         StringBuilder builder = new StringBuilder();
         StringBuilder builder2 = new StringBuilder();
